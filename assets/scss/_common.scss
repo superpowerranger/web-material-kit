@@ -1,0 +1,207 @@
+@import "components.scss";
+
+// *{
+//  border:1px solid red;
+// }
+
+body{
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    overflow-x: hidden;
+    @extend .font-paragraph;
+    font-size: $base-font-size!important;
+    @media #{$mq-xxxlarge}{
+      font-size: $base-font-size*1.2!important;
+    }
+}
+
+.bg-none{
+  @extend %bg-none;
+}
+.opacity-1{
+  opacity: 1!important;
+} 
+// .overlay{ 
+  // overflow: hidden;
+  // position: relative;
+  // &-content{
+  //   position: relative;
+  //   z-index: 3;
+  // }
+  // &:after{
+  //   content:" ";
+  //   overflow: hidden;
+  //   @include position(absolute, 0 0 0 0);
+  //   z-index: 1;
+  // }
+  // &.deep-primary-overlay{
+  //   &:after{
+  //     background-color: rgba($color: $deep-primary, $alpha: 0.7);
+  //   }
+  // }
+  // &.danger-overlay{
+  //   &:after{
+  //     background-color: rgba($color: $danger, $alpha: 0.7);
+  //   }
+  // }
+  // &.deep-gray-overlay{
+  //   &:after{
+  //     background-color: rgba($color: $deep-gray, $alpha: 0.7);
+  //   }
+  // }
+// }
+.custom-shadow{
+  box-shadow: 0 0px 70px 0 rgba($color: #2142D7, $alpha: 0.1)!important;
+}
+// .position-top-left{
+//   @include position(absolute, 0 null null 0);
+// }
+// .position-top-right{
+//   @include position(absolute, 0 0 null null);
+// }
+// .position-bottom-left{
+//   @include position(absolute, null null 0 0);
+// }
+// .position-bottom-right{
+//   @include position(absolute, null 0 0 null);
+// }
+
+.bg-overlay{
+	@include position(absolute, 0 0 0 0);
+	@include size(100%);
+  // background-color: rgba($color: $dark-primary, $alpha: 0.7);
+  background-image: url("../images/icons/overlay.png");
+	z-index:1;
+}
+
+a{
+  color: $dark;
+  text-decoration: none;
+  @include hover(){
+    color: $primary;
+    text-decoration: none;
+  }
+}
+
+.btn, input, .form-control, a, button, .slick-slide{
+  &:focus, &:active{
+    outline: 0px auto -webkit-focus-ring-color;
+    outline: o;
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+.btn{
+  @include padding(0.6rem 2rem);
+  @include rounded(7px);
+  @media #{$mq-xlarge}{
+    @include padding(0.8rem 3rem);
+    @include rounded(7px);
+  }
+}
+
+// COMMON CLASSES
+// @include create-rounded-class("md", 15px!important);
+@include create-transition-class("1", 0.5s!important);
+@include create-transition-class("2", 1s!important);
+
+
+
+// COMMON COMPONENTS
+@include input-group("rounded-pill");
+@include input-group("rounded-0");
+@include input-group("border-0");
+@include input-group("border-bottom", 2px);
+
+@include pagination("rounded-circle");
+@include create-pagination-btn (warning, $warning, $white, $warning, $white );
+@include carousel-indicators("rounded-circle");
+
+@include custom-card();
+@include custom-faq();
+@include store-btn();
+@include social-icons();
+
+
+
+@include create-btn (primary, $primary, $white, $deep-primary, $white );
+@include create-btn (deep-primary, $deep-primary, $white, $deeper-primary, $white );
+@include create-btn (dark-primary, $dark-primary, $white, $primary, $white );
+
+h1, h2, h3, h4, h5, h6,
+ .h1, .h2, .h3, .h4, .h5, .h6,{
+  color:$dark;
+  @extend .font-heading;
+}
+
+section, .section{
+  @include padding(2rem null);
+  @media #{$mq-large}{
+    @include padding(4rem null);
+  }
+  .section-heading{
+    margin-bottom: 1rem;
+    .main-heading{
+      @media #{$mq-max-xsmall}{
+        font-size: 1.5rem;
+      }
+      @media #{$mq-xlarge}{
+        font-size: 3rem;
+      }
+    }
+  }
+  @media #{$mq-xmedium}{
+    .container{
+      position: relative;
+      .section-btn{
+        @include position(absolute, 0 0 null null);
+      }
+    }
+  }
+}
+
+.container{
+  @media #{$mq-xxlarge}{
+    max-width: 1360px;
+  }
+  @media #{$mq-xxxlarge}{
+    max-width: 1400px;
+  }
+  @media #{$mq-fullhd}{
+    max-width: 1700px;
+  }
+}
+
+.border-right{
+  border-right: 1px solid gray;
+}
+@media #{$mq-max-xxsmall}{
+  @include create-col("max-xxs");
+}
+@media #{$mq-max-xsmall}{
+  @include create-col("max-xs");
+}
+@media #{$mq-max-small}{
+  .border-max-md-bottom{
+    border-bottom: 1px solid $gray;
+  }
+}
+@media #{$mq-small}{
+  .border-md-right{
+    border-right: 1px solid $gray;
+  }
+}
+@media #{$mq-xxlarge}{
+  @include create-col("xxl");
+}
+@media #{$mq-xxxlarge}{
+  @include create-col("xxxl");
+}
+@media #{$mq-fullhd}{
+  @include create-col("fullhd");
+}
+
+
+
+
