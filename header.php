@@ -7,9 +7,9 @@
     <div class="navbar-collapse offcanvas-collapse" id="offcanvassidebar">
       <ul class="navbar-nav ml-auto" id="mainmenu">
         <li class="nav-item">
-          <a class="nav-link" data-toggle="offcanvas" href="about-us.php">About Us</a>
+          <a class="nav-lik" data-toggle="offcanvas" href="about-us.php">About Us</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-ite">
           <a class="nav-link" data-toggle="offcanvas" href="#">Products</a>
         </li>
         <li class="nav-item">
